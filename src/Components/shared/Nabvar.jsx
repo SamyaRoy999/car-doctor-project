@@ -1,7 +1,27 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Nabvar = () => {
+  const navItem = [
+    {
+      path: "/Homepage",
+      title: "Home",
+    },
+    {
+      path: "/about",
+      title: "About",
+    },
+    {
+      path: "/about",
+      title: "About",
+    },
+    {
+      path: "/about",
+      title: "About",
+    },
+  ];
+
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -27,47 +47,27 @@ const Nabvar = () => {
             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
           >
             <li>
-              <a>Item 1</a>
-            </li>
-            <li>
-              <a>Parent</a>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a>Item 3</a>
+              {navItem.map((item, ind) => {
+                return (
+                  <Link href={item.path} key={ind}>
+                    {item.title}
+                  </Link>
+                );
+              })}
             </li>
           </ul>
         </div>
         <Image src="/assets/logo.svg" width={100} height={100} />
       </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-          <li>
-            <a>Item 1</a>
-          </li>
-          <li>
-            <details>
-              <summary>Parent</summary>
-              <ul className="p-2">
-                <li>
-                  <a>Submenu 1</a>
-                </li>
-                <li>
-                  <a>Submenu 2</a>
-                </li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <a>Item 3</a>
-          </li>
+      <div className="navbar-center hidden lg:flex ">
+        <ul className="menu menu-horizontal  px-2">
+          {navItem.map((item, ind) => {
+            return (
+              <Link href={item.path} className="px-1" key={ind}>
+                {item.title}
+              </Link>
+            );
+          })}
         </ul>
       </div>
       <div className="navbar-end">

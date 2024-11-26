@@ -1,6 +1,5 @@
-import React from "react";
-import { servicesData } from "../lib/servicesData";
-import ServiceCard from "./shared/ServiceCard";
+import { servicesData } from "@/lib/servicesData";
+import ServiceCard from "@/Components/shared/ServiceCard";
 const Services = () => {
   return (
     <div className="px-8">

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { Button } from "../ui/button";
 
 const Nabvar = () => {
   const navItem = [
@@ -9,8 +9,8 @@ const Nabvar = () => {
       title: "Home",
     },
     {
-      path: "/about",
-      title: "About",
+      path: "/News",
+      title: "News",
     },
     {
       path: "/about",
@@ -71,7 +71,7 @@ const Nabvar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <Button>Click me</Button>
       </div>
     </div>
   );
